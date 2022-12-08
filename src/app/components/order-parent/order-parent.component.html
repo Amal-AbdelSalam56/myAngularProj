@@ -1,0 +1,19 @@
+<div class="mb-3">
+    <label for="prdcat">Category</label>
+    <select class="form-control" name="cat" id="prdcat" [(ngModel)]="selectedCatID">
+      <option value="0">All</option>
+      <option *ngFor="let cat of catList" [value]="cat.id">{{cat.Name}}</option>
+    </select>
+  
+    <!-- For test cat id: <h3>{{selectedCatID}}</h3> -->
+  </div>
+  
+  <app-products [receivedCatID]="selectedCatID" (totalPriceChanged)="totalPriceFunc($event)"></app-products>
+  
+  
+  <h3>Total Order Price: {{receivedOrderTotalPrice}}</h3>
+  
+  
+  <br>
+
+

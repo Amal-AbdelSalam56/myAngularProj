@@ -1,0 +1,25 @@
+<div class="card" style="width: 30rem;">
+    <img [src]="prod?.Img" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">Name Of Product: {{prod?.Name}}</h5>
+        <div class="card-text">
+            <h5>Price: {{prod?.Price}}</h5>
+            <h5>Quantity: {{prod?.Quantity}}</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+        </div>
+
+        <div class="btn-group">
+            <button class="btn btn-danger" (click)="goBack()">Back</button>
+            <button class="btn btn-success" (click)="goPrev()" [disabled]="currProdID==prodIDlist[0]">Prev</button>
+            <button class="btn btn-warning" (click)="goNext()" [disabled]="currProdID==prodIDlist[prodIDlist.length-1]">Next</button>
+
+        </div>
+    </div>
+</div>
+hr>
+<div>
+    <label for="search">Search With Name:</label>
+    <input type="text" class="form-control" id="search" name="search" #prdName>
+    <button class="btn btn-success" (click)="searchFunc(prdName.value)">Search</button>
+</div>
